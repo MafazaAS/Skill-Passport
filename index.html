@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+
+    <style>
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       WARNA WEBSITE
+    ========================== */
+
+    :root {
+        --primary: #1683d8;
+        --primary-dark: #0966ad;
+
+        --dark: #123b59;
+        --text: #17212b;
+        --muted: #667788;
+
+        --bg: #f7fbff;
+        --white: #ffffff;
+
+        --soft: #eaf6ff;
+        --line: #dce9f3;
+
+        --shadow: 0 18px 45px rgba(28, 88, 130, 0.10);
+    }
+
+
+    /* =========================
+       DASAR WEBSITE
+    ========================== */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        width: min(1120px, 92%);
+        margin: auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+        height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 26px;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .nav-menu a {
+        color: var(--muted);
+        transition: 0.2s;
+    }
+
+    .nav-menu a:hover {
+        color: var(--primary);
+    }
+
+    .menu-toggle {
+        display: none;
+
+        border: none;
+        background: transparent;
+
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO / BERANDA
+    ========================== */
+
+    .hero {
+        min-height: calc(100vh - 72px);
+
+        display: flex;
+        align-items: center;
+
+        padding: 80px 0;
+
+        background:
+            radial-gradient(
+                circle at 90% 20%,
+                #dff2ff 0,
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 10% 80%,
+                #e8f7ff 0,
+                transparent 25%
+            );
+    }
+
+    .hero-grid {
+        display: grid;
+
+        grid-template-columns: 1.25fr 0.75fr;
+
+        gap: 70px;
+
+        align-items: center;
+    }
+
+    .eyebrow {
+        color: var(--primary);
+
+        font-weight: 800;
+
+        font-size: 0.78rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 7vw, 5.5rem);
+
+        line-height: 1;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: var(--primary);
+    }
+
+    .hero-description {
+        color: var(--muted);
+
+        max-width: 650px;
+
+        font-size: 1.08rem;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+
+        gap: 13px;
+
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 12px 20px;
+
+        border-radius: 10px;
+
+        font-weight: 700;
+
+        border: 1px solid var(--primary);
+
+        transition: 0.2s;
+    }
+
+    .btn.primary {
+        color: white;
+
+        background: var(--primary);
+    }
+
+    .btn.primary:hover {
+        background: var(--primary-dark);
+    }
+
+    .btn.secondary {
+        color: var(--primary);
+
+        background: white;
+    }
+
+    .btn.secondary:hover {
+        background: var(--soft);
+    }
+
+
+    /* =========================
+       KARTU FOTO PROFIL
+    ========================== */
+
+    .profile-card {
+        background: white;
+
+        border: 1px solid var(--line);
+
+        border-radius: 24px;
+
+        padding: 18px;
+
+        box-shadow: var(--shadow);
+
+        transform: rotate(2deg);
+    }
+
+    .profile-photo {
+        aspect-ratio: 1 / 1;
+
+        border-radius: 18px;
+
+        display: grid;
+
+        place-items: center;
+
+        text-align: center;
+
+        color: var(--primary);
+
+        font-weight: 800;
+
+        background:
+            linear-gradient(
+                145deg,
+                #dff3ff,
+                #f7fcff
+            );
+
+        border: 2px dashed #9ed4f4;
+    }
+
+    .profile-info {
+        padding: 18px 8px 5px;
+    }
+
+    .profile-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .profile-info p {
+        color: var(--muted);
+
+        font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       SECTION UMUM
+    ========================== */
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .section.alt {
+        background: #eef8ff;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+
+        line-height: 1.15;
+
+        letter-spacing: -1px;
+    }
+
+
+    /* =========================
+       TENTANG SAYA
+    ========================== */
+
+    .about-grid {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+
+        align-items: start;
+    }
+
+    .about-grid p {
+        color: var(--muted);
+
+        margin-bottom: 18px;
+    }
+
+    .info-box {
+        background: white;
+
+        border: 1px solid var(--line);
+
+        border-radius: 16px;
+
+        overflow: hidden;
+    }
+
+    .info-box div {
+        padding: 15px 20px;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        border-bottom: 1px solid var(--line);
+    }
+
+    .info-box div:last-child {
+        border-bottom: none;
+    }
+
+    .info-box strong {
+        font-size: 0.9rem;
+    }
+
+    .info-box span {
+        color: var(--muted);
+
+        text-align: right;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       KEAHLIAN
+    ========================== */
+
+    .skill-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 18px;
+    }
+
+    .skill-card {
+        background: white;
+
+        padding: 25px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 16px;
+
+        transition: 0.2s;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: var(--shadow);
+    }
+
+    .skill-icon {
+        width: 48px;
+        height: 48px;
+
+        display: grid;
+
+        place-items: center;
+
+        border-radius: 12px;
+
+        background: var(--soft);
+
+        color: var(--primary);
+
+        font-weight: 800;
+
+        margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+        margin-bottom: 8px;
+    }
+
+    .skill-card p {
+        color: var(--muted);
+
+        font-size: 0.9rem;
+    }
+
+    .tech-list {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 9px;
+
+        margin-top: 30px;
+    }
+
+    .tech-list span,
+    .project-tech span,
+    .tag {
+        background: var(--soft);
+
+        color: var(--primary-dark);
+
+        padding: 6px 10px;
+
+        border-radius: 7px;
+
+        font-size: 0.78rem;
+
+        font-weight: 700;
+    }
+
+
+    /* =========================
+       PROJECT / PORTOFOLIO
+    ========================== */
+
+    .project-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 22px;
+    }
+
+    .project-card {
+        overflow: hidden;
+
+        background: white;
+
+        border: 1px solid var(--line);
+
+        border-radius: 18px;
+
+        transition: 0.2s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: var(--shadow);
+    }
+
+    .project-image {
+        height: 190px;
+
+        display: grid;
+
+        place-items: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                #dff3ff,
+                #f5fbff
+            );
+
+        color: var(--primary);
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+
+    .project-content h3 {
+        margin: 13px 0 8px;
+    }
+
+    .project-content p {
+        color: var(--muted);
+
+        font-size: 0.9rem;
+
+        margin-bottom: 16px;
+    }
+
+    .project-tech {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        margin-bottom: 18px;
+    }
+
+    .project-link {
+        color: var(--primary);
+
+        font-weight: 700;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       PENCAPAIAN
+    ========================== */
+
+    .achievement-list {
+        max-width: 850px;
+    }
+
+    .achievement {
+        display: grid;
+
+        grid-template-columns: 65px 1fr;
+
+        gap: 20px;
+
+        padding: 25px 0;
+
+        border-bottom: 1px solid var(--line);
+    }
+
+    .achievement-number {
+        width: 50px;
+        height: 50px;
+
+        display: grid;
+
+        place-items: center;
+
+        border-radius: 50%;
+
+        background: white;
+
+        color: var(--primary);
+
+        font-weight: 800;
+
+        border: 1px solid var(--line);
+    }
+
+    .achievement-year {
+        color: var(--primary);
+
+        font-size: 0.8rem;
+
+        font-weight: 800;
+    }
+
+    .achievement h3 {
+        margin: 3px 0;
+    }
+
+    .achievement p {
+        color: var(--muted);
+    }
+
+
+    /* =========================
+       PENDIDIKAN
+    ========================== */
+
+    .timeline {
+        border-left: 2px solid #b8ddf4;
+
+        padding-left: 30px;
+
+        max-width: 800px;
+    }
+
+    .timeline-item {
+        position: relative;
+
+        margin-bottom: 45px;
+    }
+
+    .timeline-item::before {
+        content: "";
+
+        position: absolute;
+
+        left: -40px;
+
+        top: 7px;
+
+        width: 16px;
+        height: 16px;
+
+        border-radius: 50%;
+
+        background: var(--primary);
+
+        border: 4px solid var(--bg);
+    }
+
+    .timeline-item span {
+        color: var(--primary);
+
+        font-size: 0.8rem;
+
+        font-weight: 800;
+    }
+
+    .timeline-item h3 {
+        margin: 4px 0;
+    }
+
+    .timeline-item p {
+        color: var(--muted);
+    }
+
+
+    /* =========================
+       KONTAK
+    ========================== */
+
+    .contact-section {
+        padding-top: 40px;
+    }
+
+    .contact-card {
+        background: var(--dark);
+
+        color: white;
+
+        border-radius: 24px;
+
+        padding: 50px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 0.7fr;
+
+        gap: 50px;
+    }
+
+    .contact-card .eyebrow {
+        color: #8dd2ff;
+    }
+
+    .contact-card h2 {
+        font-size: 2.6rem;
+
+        margin-bottom: 10px;
+    }
+
+    .contact-card p {
+        color: #c6d8e5;
+    }
+
+    .contact-links {
+        display: grid;
+
+        gap: 10px;
+    }
+
+    .contact-links a {
+        padding: 13px 16px;
+
+        border: 1px solid rgba(255,255,255,0.18);
+
+        border-radius: 10px;
+
+        color: white;
+
+        transition: 0.2s;
+    }
+
+    .contact-links a:hover {
+        background: rgba(255,255,255,0.08);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+        padding: 25px 0;
+
+        background: #0d2d43;
+
+        color: #b8cedc;
+
+        font-size: 0.85rem;
+    }
+
+    .footer-inner {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+    .footer-inner a {
+        color: white;
+    }
+
+
+    /* =========================
+       RESPONSIVE TABLET
+    ========================== */
+
+    @media (max-width: 850px) {
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+
+            position: absolute;
+
+            left: 4%;
+            right: 4%;
+
+            top: 72px;
+
+            padding: 15px;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            background: white;
+
+            border: 1px solid var(--line);
+
+            border-radius: 12px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-menu a {
+            padding: 10px;
+        }
+
+        .hero-grid,
+        .about-grid,
+        .contact-card {
+            grid-template-columns: 1fr;
+        }
+
+        .profile-card {
+            max-width: 400px;
+
+            margin: auto;
+        }
+
+        .skill-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-card {
+            padding: 35px 25px;
+        }
+    }
+
+
+    /* =========================
+       RESPONSIVE HP
+    ========================== */
+
+    @media (max-width: 520px) {
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .hero {
+            padding: 60px 0;
+        }
+
+        .skill-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+        }
+
+        .footer-inner {
+            flex-direction: column;
+        }
+
+        .info-box div {
+            flex-direction: column;
+
+            gap: 3px;
+        }
+
+        .info-box span {
+            text-align: left;
+        }
+    }
+
+</style>
+</head>
+    ```html
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                MAFAZA<span>.</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Buka menu">
+                ☰
+            </button>
+
+            <nav class="nav-menu">
+
+                <a href="#home">
+                    Beranda
+                </a>
+
+                <a href="#about">
+                    Tentang Saya
+                </a>
+
+                <a href="#skills">
+                    Keahlian
+                </a>
+
+                <a href="#projects">
+                    Projek
+                </a>
+
+                <a href="#education">
+                    Pendidikan
+                </a>
+
+                <a href="#contact">
+                    Kontak
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================
+             BERANDA / HERO
+        ========================== -->
+
+        <section id="home" class="hero">
+
+            <div class="container hero-grid">
+
+                <div class="hero-text">
+
+                    <p class="eyebrow">
+                        HALO, SAYA
+                    </p>
+
+                    <!-- GANTI DENGAN NAMA ANDA -->
+                    <h1>
+                        Mafaza
+                        <br>
+                        <span>Alfiandra Saputra</span>
+                    </h1>
+
+                    <!-- GANTI DENGAN DESKRIPSI ANDA -->
+                    <p class="hero-description">
+
+                        Saya adalah seorang pelajar yang tertarik
+                        dengan pemrograman dan dunia teknologi.
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn primary">
+                            Lihat Portofolio
+                        </a>
+
+                        <a href="#contact" class="btn secondary">
+                            Hubungi Saya
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO PROFIL -->
+
+                <div class="profile-card">
+
+                    <!--
+                        NANTI BISA DIGANTI DENGAN:
+
+                        <img
+                            src="foto.jpg"
+                            alt="Foto Nama Anda"
+                            class="profile-photo"
+                        >
+                    -->
+
+                    <div class="profile-photo">
+
+                        <span>
+                            <img
+                            src="foto.jpeg"
+                            alt="Foto Mafaza"
+                            class="profile-photo"
+                        >
+                        </span>
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h3>
+                            Mafaza Alfiandra Saputra
+                        </h3>
+
+                        <p>
+                            Pelajar
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TENTANG SAYA
+        ========================== -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        TENTANG SAYA
+                    </p>
+
+                    <h2>
+                        Kenali saya lebih dekat
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div>
+
+                        <p>
+                            Halo! Saya adalah Mafaza Alfiandra Saputra.
+                            Saya merupakan seorang pelajar yang
+                            memiliki ketertarikan terhadap dunia
+                            teknologi dan komputer.
+                        </p>
+
+                        <p>
+                            Saya sedang mempelajari berbagai hal
+                            seperti pemrograman, pengembangan
+                            website, database, dan teknologi lainnya.
+                        </p>
+
+                        <p>
+                            Website ini berisi informasi mengenai diri saya serta 
+                            berbagai proyek yang pernah saya kerjakan.
+                        </p>
+
+                    </div>
+
+
+                    <!-- INFORMASI PRIBADI -->
+
+                    <div class="info-box">
+
+                        <div>
+
+                            <strong>
+                                Nama
+                            </strong>
+
+                            <span>
+                                Mafaza Alfiandra Saputra
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Domisili
+                            </strong>
+
+                            <span>
+                                Pati, Indonesia
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Sekolah
+                            </strong>
+
+                            <span>
+                                SMK Tunas Harapan Pati
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Jurusan
+                            </strong>
+
+                            <span>
+                                Teknik Jaringan Komputer dan Telekomunikasi
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Status
+                            </strong>
+
+                            <span>
+                                Pelajar
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Fokus
+                            </strong>
+
+                            <span>
+                                Teknologi & Pemrograman
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KEAHLIAN
+        ========================== -->
+
+        <section id="skills" class="section alt">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        KEAHLIAN
+                    </p>
+
+                    <h2>
+                        Teknologi yang saya pelajari
+                    </h2>
+
+                </div>
+
+
+                <div class="skill-grid">
+
+
+                    <!-- WEB DEVELOPMENT -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Pengembangan website menggunakan
+                            HTML, CSS, JavaScript, PHP, Laravel,
+                            Vue.js, dan teknologi web lainnya.
+                        </p>
+
+                    </div>
+
+
+                    <!-- DATABASE -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            DB
+                        </div>
+
+                        <h3>
+                            Database
+                        </h3>
+
+                        <p>
+                            Perancangan dan pengelolaan database
+                            menggunakan MySQL, SQL Server,
+                            dan sistem database lainnya.
+                        </p>
+
+                    </div>
+
+
+                    <!-- NETWORKING -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            NW
+                        </div>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                        <p>
+                            Mempelajari jaringan komputer,
+                            IP addressing, DHCP, MikroTik,
+                            server, dan virtualisasi.
+                        </p>
+
+                    </div>
+
+
+                    <!-- APPLICATION -->
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            APP
+                        </div>
+
+                        <h3>
+                            Application Development
+                        </h3>
+
+                        <p>
+                            Pengembangan aplikasi desktop,
+                            mobile, API, dan aplikasi berbasis
+                            teknologi lainnya.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEKNOLOGI -->
+
+                <div class="tech-list">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        PHP
+                    </span>
+
+                    <span>
+                        Laravel
+                    </span>
+
+                    <span>
+                        Vue.js
+                    </span>
+
+                    <span>
+                        C#
+                    </span>
+
+                    <span>
+                        SQL Server
+                    </span>
+
+                    <span>
+                        MySQL
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        Figma
+                    </span>
+
+                    <span>
+                        Android Studio
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PORTOFOLIO / PROYEK
+        ========================== -->
+
+        <section id="projects" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        PROJEK
+                    </p>
+
+                    <h2>
+                        Proyek yang pernah saya kerjakan
+                    </h2>
+
+                </div>
+
+
+                <div class="project-grid">
+
+
+                    <!-- PROYEK 1 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="uks.jpeg" alt="">
+                        </div>
+
+                        <div class="project-content">
+
+                            <span class="tag">
+                                Web & Desktop Application
+                            </span>
+
+                            <h3>
+                                SI-UKS
+                            </h3>
+
+                            <p>
+                                Saya bersama tim saya membuat
+                                aplikasi berbasis web dan desktop
+                                untuk UKS dan PMR di sekolah
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>
+                                    Laravel
+                                </span>
+
+                                <span>
+                                    MySQL
+                                </span>
+
+                                <span>
+                                    Vue.js
+                                </span>
+
+                                <span>
+                                    C#
+                                </span>
+
+                                <span>
+                                    SQL Server
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROYEK 2 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+                            <img src="cekrek.png" alt="">
+                        </div>
+
+                        <div class="project-content">
+
+                            <span class="tag">
+                                Web Application
+                            </span>
+
+                            <h3>
+                                Cekrek.in
+                            </h3>
+
+                            <p>
+                                Saya bersama tim saya
+                                membuat aplikasi photobooth
+                                online berbasis web.
+                                
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span>
+                                    Laravel
+                                </span>
+
+                                <span>
+                                    MySQL
+                                </span>
+
+                                <span>
+                                    Vue.js
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PENDIDIKAN
+        ========================== -->
+
+        <section id="education" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        PENDIDIKAN
+                    </p>
+
+                    <h2>
+                        Perjalanan pendidikan
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <!-- PENDIDIKAN 1 -->
+
+                    <div class="timeline-item">
+
+                        <span>
+                            2024 — SEKARANG
+                        </span>
+
+                        <h3>
+                            SMK Tunas Harapan Pati
+                        </h3>
+
+                        <p>
+                            Teknik Jaringan Komputer dan Telekomunikasi
+                        </p>
+
+                    </div>
+
+
+                    <!-- PENDIDIKAN 2 -->
+
+                    <div class="timeline-item">
+
+                        <span>
+                            2021 — 2024
+                        </span>
+
+                        <h3>
+                            SMP Negeri 1 Tayu
+                        </h3>
+
+                    </div>
+
+                    <!-- PENDIDIKAN 3 -->
+
+                    <div class="timeline-item">
+
+                        <span>
+                            2015 — 2021
+                        </span>
+
+                        <h3>
+                            SD Annida Ya Fatimah
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KONTAK
+        ========================== -->
+
+        <section id="contact" class="section contact-section">
+
+            <div class="container">
+
+                <div class="contact-card">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            KONTAK
+                        </p>
+
+                        <h2>
+                            Mari terhubung
+                        </h2>
+
+                        <p>
+                            Jika ingin menghubungi saya untuk
+                            kolaborasi, proyek, atau sekadar
+                            berdiskusi, silakan gunakan kontak
+                            di bawah.
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-links">
+
+                        <!-- GANTI EMAIL -->
+                        <a href="mailto:mfz.spt@gmail.com">
+                            ✉ Email
+                        </a>
+
+                        <!-- GANTI LINK GITHUB -->
+                        <a href="https://github.com/MafazaAS" target="_blank">
+                            ◉ GitHub
+                        </a>
+
+                        <!-- GANTI LINK LINKEDIN -->
+                        <a href="https://www.linkedin.com/in/mafaza-alfiandra-saputra-599997431/" target="_blank">
+                            in LinkedIn
+                        </a>
+
+                        <!-- GANTI LINK INSTAGRAM -->
+                        <a href="https://www.instagram.com/mafaza_1208/" target="_blank">
+                            ◎ Instagram
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <p>
+                © 2026 Mafaza Alfiandra Saputra.
+            </p>
+
+            <a href="#home">
+                Kembali ke atas ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+    // =========================
+    // MENU HAMBURGER
+    // =========================
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+
+        navMenu.classList.toggle('active');
+
+    });
+
+
+    // =========================
+    // TUTUP MENU SETELAH LINK DIKLIK
+    // =========================
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+            navMenu.classList.remove('active');
+
+        });
+
+    });
+
+
+    // =========================
+    // TAHUN FOOTER OTOMATIS
+    // =========================
+
+    const footerText = document.querySelector('footer p');
+
+    if (footerText) {
+
+        const currentYear = new Date().getFullYear();
+
+        footerText.innerHTML =
+            `© ${currentYear} Mafaza Alfiandra Saputra.`;
+
+    }
+
+</script>
+
+</body>
+```
+</html>
